@@ -1,0 +1,7 @@
+'Packing.Span.physicalIncomparable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Packing.Span.tailWitness_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Packing.Span.unboundedWitness_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Packing.Span.permutationSpan_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Packing.Span.permutationTail_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Packing.Span.infiniteSpan_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Packing.Span.permutationDistance_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

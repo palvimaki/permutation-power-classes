@@ -3,6 +3,8 @@
 Read the [paper](paper.pdf) or its [LaTeX source](paper.tex).
 The paper addresses two questions from Blitvić, Kammoun, and Steingrímsson. [Part I, Section 7](https://arxiv.org/html/2610.29846v1#S7)
 
+The [span research programme](research/span/README.md) contains the new results and their verification status.
+
 ## Results
 
 - **Item 9.** A finite rank test characterizes every positive power class for every proper positive overlap.
