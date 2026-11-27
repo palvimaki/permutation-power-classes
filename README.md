@@ -66,12 +66,11 @@ It checks 5,154 counts across all 1,462 admissible pairs of lengths two through 
 It also checks 1,054 counts across all 172 admissible pairs of length seven with overlaps four through six.
 It checks the delayed family at eleven lengths and the inflated construction at three bases.
 
-## Authorship and AI disclosure
+## Production and release
 
-**Esa-Pekka Pälvimäki, MD, PhD** selected the problems and presented them to the models.
-OpenAI Codex (Astra 6.2) developed the mathematical constructions and proofs.
-It wrote the manuscript, the Lean formalization, and the computational checks.
-The author used Gemini Neon to check the proofs.
-The author assumes responsibility for all content.
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
+Gemini Neon checked the proofs in the original power-class paper.
 
 This repository contains the preprint and its verification files.
+
+[Citation details](CITATION.md)
