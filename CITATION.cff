@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Pälvimäki"
     given-names: "Esa-Pekka"
-version: "1.0.0"
+version: "1.0.1"
 date-released: 2026-11-27
 repository-code: "https://github.com/palvimaki/permutation-power-classes"
 preferred-citation:
@@ -15,4 +15,4 @@ preferred-citation:
       given-names: "Esa-Pekka"
   title: "Power sequences and delayed disagreement in consecutive permutation packings"
   year: 2026
-  url: "https://github.com/palvimaki/permutation-power-classes/releases/tag/v1.0.0"
+  url: "https://github.com/palvimaki/permutation-power-classes/releases/tag/v1.0.1"

@@ -68,10 +68,10 @@ It checks the delayed family at eleven lengths and the inflated construction at 
 
 ## Authorship and AI disclosure
 
-**Esa-Pekka Pälvimäki, MD, PhD** directed the investigation.
+**Esa-Pekka Pälvimäki, MD, PhD** selected the problems and presented them to the models.
 OpenAI Codex (Astra 6.2) developed the mathematical constructions and proofs.
 It wrote the manuscript, the Lean formalization, and the computational checks.
-The author checked the proofs with help from Google Gemini Neon.
+The author used Gemini Neon to check the proofs.
 The author assumes responsibility for all content.
 
 This repository contains the preprint and its verification files.
