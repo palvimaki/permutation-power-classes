@@ -1,6 +1,6 @@
 # A limit shape for random linear extensions of cluster posets
 
-Esa-Pekka Pälvimäki, MD, PhD · 27 November 2026
+27 November 2026
 
 ## Result
 
@@ -205,8 +205,7 @@ Increasing the prefactor handles the finitely many smaller values of $n$. This p
 
 ## Proof status
 
-The author selected the research direction and takes responsibility for this note.
-Astra 6.2 developed the mathematics, wrote the text, and checked the argument in separate sessions.
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
 The proof uses the boundary modification and beta substitution of Mitchell Lee and Ashwin Sah.
 This note has a written proof. It has received no Lean verification or external referee review.
 [Lee and Sah, Advances in Applied Mathematics (2019)](https://doi.org/10.1016/j.aam.2018.10.001)

@@ -54,7 +54,5 @@ The proof uses a finite permutation directly and the existing rank-transfer libr
 It needs no theorem counting all permutations in a power class.
 
 The [registration](PROTOCOL.md) records the original predictions.
-Esa-Pekka Pälvimäki selected the problems and presented them to the models.
-OpenAI Codex (Astra 6.2) produced this mathematics, text, Lean code, and computational work.
-For the original power-class paper, the author used Gemini Neon to check the proofs.
-The named author takes responsibility for this work.
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
+Gemini Neon checked the proofs in the original power-class paper.

@@ -10,7 +10,7 @@ from urllib.parse import urljoin
 import typst
 
 HERE = Path(__file__).resolve().parent
-SOURCE_URL = "https://github.com/palvimaki/permutation-power-classes/blob/frontier-v1.0.0/research/frontier/"
+SOURCE_URL = "https://github.com/palvimaki/permutation-power-classes/blob/frontier-v1.0.1/research/frontier/"
 
 LAYOUT = r'''
 #set page(paper: "a4", margin: (top: 23mm, bottom: 23mm, left: 25mm, right: 25mm), numbering: "1")
@@ -32,10 +32,10 @@ def build(stem, filename):
     body = subprocess.run([pandoc, "--from=markdown+tex_math_dollars", "--to=typst", "--wrap=none"],
                           input=article, text=True, capture_output=True, check=True).stdout
     quote = json.dumps(title, ensure_ascii=False)
-    header = '#set document(title: ' + quote + ', author: "Esa-Pekka Pälvimäki")\n'
+    header = '#set document(title: ' + quote + ')\n'
     header += LAYOUT
     header += '#align(center)[#set par(justify: false)\n#text(size: 18pt, weight: "bold", ' + quote + ')\n'
-    header += '#v(4pt)\nEsa-Pekka Pälvimäki, MD, PhD #linebreak()\n#text(size: 9pt)[27 November 2026]]\n#v(9pt)\n'
+    header += '#v(4pt)\n#text(size: 9pt)[27 November 2026]]\n#v(9pt)\n'
     with TemporaryDirectory() as folder:
         temp = Path(folder) / "paper.typ"
         temp.write_text(header + body)

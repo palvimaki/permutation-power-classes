@@ -1,6 +1,6 @@
 # Span and effective Wilf equivalence for consecutive permutation packings
 
-**Research note.** Esa-Pekka Pälvimäki · 27 November 2026
+27 November 2026
 
 Finite span gives a decision procedure for comparing two packing sequences.
 The proof constructs a finite matrix from orders on consecutive windows.
@@ -195,14 +195,12 @@ It also leaves open comparisons between two exponential-side pairs when at least
 - Nagy constructs the double-factorial family and gives a Lean bridge between packing permutations and linear extensions. [Paper and ancillary files](https://arxiv.org/abs/2611.06937)
 - Borga and Penaguião establish the compatible-walk construction for consecutive permutation patterns.
   The bounded-span argument above proves uniqueness for this restricted walk correspondence. [Lemma 3.8](https://doi.org/10.5802/alco.135)
-- The power-class paper supplies the rank transfer and consecutive-block extension arguments. [Corrected release](https://github.com/palvimaki/permutation-power-classes/releases/tag/v1.0.1)
+- The power-class paper supplies the rank transfer and consecutive-block extension arguments. [Corrected release](https://github.com/palvimaki/permutation-power-classes/releases/tag/v1.0.2)
 - The independent construction by 1337isnot1337 appeared on 26 November 2026. Its pairs have common length $3L+1$ and first differ at $L+1$.
   The author separately recorded the abstract finite-maximum argument. [Dated proof](https://github.com/1337isnot1337/solved-conjectures/blob/3f84597110cb5fa3dcfa6135bf0ee82120a3d431/results/blitvic-kammoun-steingrimsson-packing-cutoff/PROOF.md) · [Follow-up issue](https://github.com/1337isnot1337/solved-conjectures/issues/883)
 
 ## Contributions
 
-Esa-Pekka Pälvimäki selected the problems and presented them to the models.
-OpenAI Codex (Astra 6.2) developed these arguments and wrote this note and its verification code.
-For the original power-class paper, the author used Gemini Neon to check the proofs.
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
+Gemini Neon checked the proofs in the original power-class paper.
 The new span results have no recorded Gemini Neon or human expert review.
-The named author takes responsibility for this work.

@@ -1,6 +1,8 @@
 # A rank formula for the factorial exponent at every overlap
 
-Esa-Pekka Pälvimäki · 27 November 2026 · Written proof by Astra 6.2
+27 November 2026
+
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
 
 A packing prescribes a permutation pattern in each of $j$ windows.
 Let $K$ be the window length, $m$ the admissible overlap, and $d=K-m$ the stride.

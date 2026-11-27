@@ -1,6 +1,6 @@
 # Packing counts beyond finite span
 
-Esa-Pekka Pälvimäki, MD, PhD · 27 November 2026.
+27 November 2026
 
 **How many copies decide whether two patterns have the same counts?**
 For infinite-span patterns at any Fuss–Catalan growth rate, the larger overlap plus two copies suffice.
@@ -28,9 +28,8 @@ All shared ranks concentrate simultaneously. For each fixed tolerance, the error
 | Lee–Sah Conjecture 6.1 | Written proof | [PDF](limit-shape.pdf) · [Density comparison check](LIMIT-WEIGHT-AUDIT.md) · [Statement check and permutation plot](LIMIT-AUDIT.md) |
 
 The new theorems have written proofs. They await external mathematical review and Lean verification.
-The author selected the problem and takes responsibility for the release.
-Astra 6.2 developed the new mathematics, wrote the text and code, and checked proofs in separate sessions.
-The author used Gemini Neon to check the original power-class paper.
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
+Gemini Neon checked the proofs in the original power-class paper.
 Fable checked the earlier span result and proposed the eventual geometric test.
 The [registration](PROTOCOL.md) predates the new census.
 The Fuss–Catalan classification and Lee–Sah proof arose during the investigation.

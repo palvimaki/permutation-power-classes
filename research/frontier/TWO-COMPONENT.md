@@ -1,6 +1,8 @@
 # A decision procedure for packing counts with at most two components per run
 
-Esa-Pekka Pälvimäki · 27 November 2026 · Written proof by Astra 6.2.
+27 November 2026
+
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
 
 **Theorem.** Suppose every residue is a chain. Suppose each run of consecutive components with the same direction contains at most two components.
 Then each run has an effectively algebraic ordinary generating function in the number of windows.

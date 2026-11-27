@@ -1,6 +1,6 @@
 # Wilf equivalence at every Fuss–Catalan growth rate
 
-Esa-Pekka Pälvimäki · 27 November 2026 · Written proof by Astra 6.2.
+27 November 2026
 
 Let $N(j)$ count permutations with the prescribed pattern on each of $j$ windows.
 Allow any pattern length $K$ and admissible overlap $1\le m<K$.
@@ -212,7 +212,6 @@ $$\boxed{\lfloor(K-1)/3\rfloor}\qquad(K\ge7).$$
 
 ## Proof status and credit
 
-The author selected the research direction and takes responsibility for this note.
-Astra 6.2 developed the mathematics, wrote the text and verification code, and checked the arguments in separate sessions.
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
 These are written proofs. They await external mathematical review and Lean verification.
 The growth theorem supplies the component formula used above. [Growth proof and audit](ASYMPTOTIC-AUDIT.md)

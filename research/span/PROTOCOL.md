@@ -1,6 +1,8 @@
 # Span and effective Wilf equivalence
 
-Esa-Pekka Pälvimäki · 27 November 2026
+27 November 2026
+
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
 
 This record fixes the proposed tests before this project runs new computations.
 The original power-class paper supplies the rank maps and the packing convention.

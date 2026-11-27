@@ -1,6 +1,10 @@
 # Beyond finite span
 
-27 November 2026. Esa-Pekka Pälvimäki directed the research. Astra 6.2 recorded the hypotheses before the new census.
+27 November 2026
+
+Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
+
+Astra 6.2 recorded the hypotheses before the new census.
 
 Fable independently checked the earlier span result through length seven. Fable read the earlier transfer and growth proofs.
 Fable proposed eventual geometric growth for every finite-span sequence, with onset controlled by the overlap.
