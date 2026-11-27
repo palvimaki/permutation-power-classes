@@ -1,0 +1,330 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[hmargin=0.90in,vmargin=0.80in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\N}{N_\pi^m}
+
+\title{Power sequences and delayed disagreement\\in consecutive permutation packings}
+\author{Esa-Pekka P\"alvim\"aki, MD, PhD}
+\date{27 November 2026}
+\hypersetup{pdftitle={Power sequences and delayed disagreement in consecutive permutation packings},
+  pdfauthor={Esa-Pekka Pälvimäki}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We characterize every pattern and fixed overlap whose packing counts are powers of a single integer.
+Two counts suffice, regardless of overlap size. For $m\ge2$, copies two and $m+1$ suffice.
+In the power classes, the packing poset splits into singletons and pairs of disjoint chains.
+For base two, each overlap contributes exactly one incomparable pair.
+We also construct pairs of patterns whose counts first differ arbitrarily late.
+Consequently, no absolute copy cutoff determines Wilf equivalence.
+Lean 4 verifies the counterexample to an absolute cutoff.
+These results address Questions 8 and 9 of Blitvi\'c, Kammoun, and Steingr\'imsson.
+\end{abstract}
+
+\section{The classification}
+Fix a permutation $\pi$ of $[K]=\{1,\ldots,K\}$ and an overlap $1\le m<K$.
+Write $d=K-m$. For $j\ge1$, take $j$ windows of length $K$ with starts $0,d,\ldots,(j-1)d$.
+Let $\N(j)$ count permutations of $[K+(j-1)d]$ that induce $\pi$ in every prescribed window.
+Additional occurrences are allowed. Two pattern--overlap pairs are Wilf equivalent if their counts agree for every $j$ \cite{bks}.
+We ask when $\N(j)=k^{j-1}$ for a positive integer $k$.
+
+Admissibility means that the first and last $m$ entries have the same relative order.
+Failure of admissibility gives $\N(2)=0$. Assume admissibility throughout.
+Let $p_1<\cdots<p_m$ and $q_1<\cdots<q_m$ list the prefix and suffix ranks, respectively.
+The overlap identifies rank $q_i$ on the left with rank $p_i$ on the right.
+Write $P=\{p_i\}$ and $Q=\{q_i\}$. Set $p_0=q_0=0$ and $p_{m+1}=q_{m+1}=K+1$.
+Define
+\[
+ a_i=p_{i+1}-p_i-1,\qquad c_i=q_{i+1}-q_i-1,\qquad
+ b=\prod_{i=0}^m\binom{a_i+c_i}{a_i}.
+\]
+For $z\in\{0,\ldots,K+1\}$ define two nondecreasing maps
+\begin{align*}
+ D(z)&=\max\bigl(\{0\}\cup\{p_i:q_i\le z,\ 1\le i\le m\}\bigr),\\
+ U(z)&=\min\bigl(\{K+1\}\cup\{p_i:q_i\ge z,\ 1\le i\le m\}\bigr).
+\end{align*}
+
+\begin{theorem}\label{class}
+For every admissible overlap, the following conditions are equivalent.
+\begin{enumerate}
+\item $\N(j)=k^{j-1}$ for every $j\ge1$.
+\item $\N(2)=k$ and $\N(m+2)=k^{m+1}$.
+\item $b=k$, and for every $x\in[K]\setminus Q$, $y\in[K]\setminus P$, and $2\le t\le m+1$,
+\[
+ y\le D^t(x)\quad\text{or}\quad y\ge U^t(x).
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Let the order of each window follow the ranks of $\pi$.
+Their transitive closure is the packing poset. Sorting positions by value identifies packings with linear extensions \cite[Theorem~5.3]{bks}.
+Write $W_i$ for window $i$ and $B_i=W_i\cup W_{i+1}$ for an adjacent pair.
+Inside $B_i$, the shared chain separates $m+1$ gaps.
+Each gap consists of two disjoint chains of lengths $a_h,c_h$.
+Their interleavings give the binomial factors in $b$. Hence $\N(2)=b$.
+
+Choose one total order on each $B_i$ that respects both windows.
+These choices extend to a global order.
+Indeed, $B_i$ meets the preceding union exactly in $W_i$. The two orders agree on that chain.
+Between consecutive shared elements, merge the two private lists while preserving each list's order.
+Merge the lists at the two ends in the same way.
+This proves surjectivity of restriction onto the $b^{j-1}$ tuples. Hence $\N(j)\ge b^{j-1}$.
+The same construction extends every order on a consecutive block by adjoining windows on either side.
+Thus later attachments preserve the induced order on every such block.
+Borga and Penagui\~ao use related gluing for compatible consecutive patterns \cite{bp}.
+
+We claim equality holds exactly when every incomparable pair lies in some $B_i$, for $j\ge2$.
+Under this condition the tuple determines every pairwise comparison.
+Conversely, take incomparable positions $u,v$ outside any common $B_i$.
+The union of their strict predecessor sets forms an order ideal containing neither position.
+List that ideal first, then $u,v$, then the remaining positions in any compatible order.
+Swapping $u,v$ gives a different order with the same tuple. This proves the claim.
+
+The windows containing a position form an interval of indices.
+Two positions share no $B_i$ exactly when their index intervals have distance at least two.
+For such positions, let $r$ end the earlier interval and let $r+t$ start the later interval.
+Their endpoint ranks satisfy $x\notin Q$ and $y\notin P$.
+Conversely, each such pair of ranks occurs at these endpoints in a block of $t+1$ windows.
+We may compute comparisons inside this block, by the extension argument.
+
+At distance $t$, the ranks weakly below the initial position $x$ are exactly the ranks at most $D^t(x)$.
+The ranks weakly above it are exactly the ranks at least $U^t(x)$.
+At $t=0$, both boundaries equal $x$.
+For the induction step, the incoming window meets the earlier union exactly in its intersection with the preceding window.
+Indeed, an old position in the incoming window lies after its start and before the preceding window's end.
+It therefore belongs to both windows, even if three or more windows contain it.
+
+A comparison crossing between old and new positions must pass through this shared chain.
+A path returning to the shared chain follows its fixed order and creates no further comparisons.
+If the previous lower boundary is $z$, the admissible shared ranks are precisely $q_i\le z$.
+Their new ranks are the corresponding $p_i$.
+Monotonicity puts a shared position of new rank $p_s$ below $x$ exactly when $q_s\le z$.
+Taking the largest available $p_i$, or zero, gives $D(z)$.
+Reversing the inequalities gives $U(z)$. This completes the induction.
+
+Consequently, a strict gap $D^t(x)<y<U^t(x)$ at $t\ge2$ witnesses failure of equality.
+An orbit of a nondecreasing map on a finite chain moves in one direction.
+After one step, each map takes at most $m+1$ values.
+Each orbit must therefore stabilize by step $m+1$.
+Every possible failure occurs within the tested distances.
+A failing block extends to $m+2$ windows while preserving its incomparable pair.
+Its endpoint positions still share no $B_i$ because $x\notin Q$ and $y\notin P$.
+This proves the equivalences. One window always has one packing.
+\end{proof}
+
+\begin{corollary}[A shorter test]\label{short}
+Set $J=\max(3,m+1)$. Then $\N(j)=k^{j-1}$ for every $j\ge1$ if and only if
+$\N(2)=k$ and $\N(J)=k^{J-1}$.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{class} gives the result for $m=1$.
+For $m\ge2$, suppose the first strict gap occurs at distance $m+1$.
+At distance $m$, the same endpoint rank $y$ lay outside the gap.
+Hence the lower boundary falls past $y$ or the upper boundary rises past $y$ at the last step.
+Rank complementation exchanges these cases, so consider the falling lower boundary.
+If two consecutive iterates agree, all later iterates agree.
+Thus $D(x),\ldots,D^{m+1}(x)$ decrease strictly through all $m+1$ possible values.
+Their last two values are $p_1$ and $0$. Hence $1\le y<p_1$, since $y\notin P$.
+Also $D(p_1)=0$ gives $p_1<q_1$. Consequently $1\notin Q$, $D^2(1)=0$, and $U^2(1)=p_1$.
+The same $y$ already lies in a strict gap at distance two, contradicting first failure.
+Thus distances $2,\ldots,m$ suffice. The block-extension argument gives the improved copy cutoff.
+\end{proof}
+For $m=1$, three copies are necessary in general.
+For instance, $132$ has three two-copy packings and fifteen three-copy packings.
+
+\paragraph{Chain case.}
+At $k=1$, Theorem~\ref{class} characterizes the pairs whose poset is a chain for every $j$.
+A finite poset has exactly one extension precisely when it is a chain.
+Theorem~5.23 of \cite{bks} gives a gap-vector criterion for $m\le K/2$.
+Theorem~\ref{class} covers $m>K/2$ as well.
+For large overlaps, $b=1$ alone is insufficient, as Section~\ref{delay} shows.
+
+\section{Structure at equality}
+\begin{theorem}\label{blocks}
+Suppose $\N(j)=b^{j-1}$ for a fixed $j\ge2$.
+The packing poset is an ordinal sum of singleton blocks and disjoint unions of two nonempty chains.
+In an ordinal sum, every element of an earlier block precedes every element of a later block.
+Each $B_i$ contributes one two-chain block of lengths $a_h,c_h$ for each gap with $a_hc_h>0$.
+\end{theorem}
+
+\begin{proof}
+Join two positions by an edge when they are incomparable.
+Every edge belongs to some $B_i$ by the equality criterion.
+For $h>i$, $B_i\cap B_h$ lies in the chain $W_{i+1}$.
+Thus each edge belongs to exactly one $B_i$. Label it by $i$.
+
+Suppose $uv$ and $uw$ have different labels.
+If $v<w$, choose local orders imposing $w<u<v$.
+Independent gluing realizes both choices, contradicting $v<w$.
+The same argument excludes $w<v$. Thus $v,w$ form another edge.
+Its label differs from both previous labels. Otherwise one double window would contain all three endpoints and repeat another edge.
+Orient the three edges cyclically in their three local orders. Gluing now gives a contradiction.
+Therefore all edges incident at one vertex have the same label.
+Following paths proves that each connected component with edges has one label.
+
+Within $B_i$, the two chains of each nonempty mixed gap form a complete bipartite incomparability graph.
+Distinct gaps have no edges between them. Extension preserves these comparisons and incomparabilities.
+The label result therefore identifies all global components.
+An outside vertex compares with every vertex in a component.
+It lies on the same side of both ends of any edge, by transitivity.
+Following paths in each of two components orders the components uniformly. Their order gives the asserted ordinal sum.
+\end{proof}
+
+For $b=2$, the product has exactly one nontrivial factor, $\binom21$.
+Hence exactly $j-1$ blocks are isolated incomparable pairs. Every other block is a singleton.
+Conversely, these blocks give $2^{j-1}$ extensions.
+This proves the base-two observation in \cite[Section~7, item~9]{bks}.
+A separator in the sense of item~5 is a singleton with at least one two-chain block on each side.
+This describes separators within these power classes.
+
+\paragraph{Interleaving ranks.}
+Take $123584679$ with $m=4$. Here $P=\{1,2,3,5\}$ and $Q=\{4,6,7,9\}$.
+The only mixed gap has lengths one and one, so $b=2$.
+All tested $x$ satisfy $x\le8$, and all tested $y$ satisfy $y\ge4$.
+The upper orbit from $8$ runs through $5,2,1,1,\ldots$.
+Hence $U^t(x)\le2<y$ throughout the test.
+By contrast, $1324$ with $m=2$ has $b=2$ and $\N(3)=5$.
+
+\paragraph{Infinite classes.}
+For any $k\ge1$, take $K\ge k+4$, prefix $(1,k+1)$, and suffix $(K-2,K)$.
+Fill the middle with the unused ranks in increasing order. Take $m=2$.
+Each shared interval interleaves one left element with $k-1$ ordered right elements.
+In each interior window, the first shared interval ends before the last shared interval begins in value order.
+All other comparisons are forced by the window chains.
+Thus the $j-1$ insertions are independent and give exactly $k^{j-1}$ extensions.
+Varying $K$ gives infinitely many representatives for every positive base.
+
+\section{No absolute cutoff for Wilf equivalence}\label{delay}
+Item~8 of \cite{bks} asks whether five copies distinguish all inequivalent pairs.
+The following family rules out every constant bound, even for two patterns of equal length and equal overlap.
+
+\begin{theorem}\label{delayed}
+For every $L\ge5$, set $A=L-2$, $K=3L$, and $m=3L-3$.
+Construct $\pi_L$ by replacing the following list with its ranks:
+\[
+ (n,\ n+A+\tfrac13,\ n+2A+\tfrac23),\qquad n=0,\ldots,L-1,
+\]
+with triples in increasing index order.
+For every $j\ge1$,
+\[
+ N_{\pi_L}^m(j)=2^{\max(0,\,j-L+2)} .
+\]
+\end{theorem}
+
+\begin{proof}
+The stride is three, so a packing with $j$ windows uses triples $X_i,Y_i,Z_i$ for $0\le i\le M=L+j-2$.
+Each prescribed window contains $L$ consecutive triples. Shifting all triple indices adds a constant to the displayed values.
+Thus each such window has the same pattern.
+Any indices at distance at most $L-1$ share a window.
+Indeed, for $i\le h$ choose its start $\max(0,h-L+1)$.
+Each of the three individual tracks increases.
+
+For adjacent tracks we have
+\[
+ X_i<Y_h\ \Longleftrightarrow\ i\le h+A,\qquad
+ Y_i<Z_h\ \Longleftrightarrow\ i\le h+A .
+\]
+For the first equivalence, if $i\le h$, use $X_i\le X_h<Y_h$.
+If $h<i\le h+A$, compare directly in one window.
+If $i\ge h+A+1$, compare $Y_h<X_{h+A+1}\le X_i$.
+These direct comparisons span at most $A+1=L-1$ indices.
+The same proof applies to $Y,Z$.
+
+If $i\le h+2A$, then $t=\max(0,i-A)$ gives $X_i<Y_t<Z_h$.
+If $i\ge h+2A+2$, then $t=h+A+1$ gives $Z_h<Y_t<X_i$.
+Both intermediate indices lie between zero and $M$. Only the pairs $X_{h+2A+1},Z_h$ remain.
+
+For $r\in\{1/3,2/3\}$ assign values $(n,n+A+r,n+2A+2r)$ to each triple.
+Each assignment gives distinct values. Both induce the prescribed order in every window.
+Indeed, only an outer-track comparison at index difference $2A+1$ can change, and $2A+1>L-1$.
+These orders reverse every remaining pair, proving its incomparability.
+The incomparable pairs have disjoint endpoints.
+By transitivity, every third element lies below both endpoints or above both.
+Hence each pair forms a two-element block, and its order can be chosen independently.
+There are $\max(0,M-2A)$ such pairs. Substitution gives the formula.
+\end{proof}
+
+The increasing pattern of the same length has one packing for every $j$.
+The first disagreement occurs at $j=L-1=m/3$. In particular, $L=7$ gives the pattern
+\[
+ (1,7,14,2,9,16,3,10,17,4,11,18,5,12,19,6,13,20,8,15,21).
+\]
+At overlap 18 its counts start $1,1,1,1,1,2,4,8$.
+The family gives a linear lower bound along $m=3L-3$.
+The shorter test gives the upper bound $\max(3,m+1)$ for comparison with a power sequence.
+The best overlap-dependent cutoff remains undetermined in general.
+The theorem also leaves open an upper bound of practical size for two arbitrary patterns of bounded length.
+
+\paragraph{Delayed disagreement at each fixed base.}
+For completeness, every fixed $k\ge2$ also admits arbitrarily delayed disagreement with $k^{j-1}$.
+Use two groups of three tracks per time step.
+For a three-track group, allow successive integral offsets $a,b$ with $1\le a,b\le L-2$ and $a+b+1>L-1$.
+Its coordinates are $(n,n+a+r,n+a+b+2r)$.
+The preceding proof applies with thresholds $a,b$ on the two adjacent track pairs.
+For the forward outer comparison use $t=\max(0,i-a)$.
+For the reverse comparison use $t=h+b+1$.
+The only free pairs are $X_{h+a+b+1},Z_h$, giving $\max(0,M-a-b)$ isolated pairs.
+
+Give the lower group offsets $(1,L-2)$ and reverse its value order.
+Give the upper group offsets $(L-2,L-2)$ in the original order.
+At each time, list the lower triple followed by the upper triple.
+Place every lower value below every upper value in the pattern.
+This comparison holds globally because each lower track decreases and each upper track increases.
+Any lower position is at most its time-zero position.
+That position precedes the upper time-zero position, which is at most the chosen upper position.
+Thus the two groups form an ordinal sum.
+The lower group contributes $j-1$ free pairs. The upper group contributes $\max(0,j-L+2)$.
+
+In every lower triple, replace $X$ by $k-1$ consecutive positions with consecutive increasing ranks.
+Replace that position consistently in every window. Each original forced comparison lifts to every member of the replacement chains.
+Conversely, projecting an increasing path between distinct chains gives a path in the original order after removing repeated vertices.
+Thus each lower free pair becomes a chain of length $k-1$ beside a singleton.
+It contributes $k$ extensions. The full count is
+\[
+ k^{j-1}2^{\max(0,j-L+2)}.
+\]
+Replacing the upper group by a fully increasing list of triples gives a baseline pattern with counts $k^{j-1}$.
+Both patterns have $K=(k+4)L$ and $m=(k+4)(L-1)$. They first differ at $j=L-1$.
+
+\section*{Verification and provenance}
+The accompanying Python program counts extensions from the original window inequalities using order ideals.
+For lengths two through six it checks 5,154 counts across 1,462 admissible pairs.
+At length seven it checks all 172 admissible pairs with overlaps four, five, or six.
+For these pairs it checks 1,054 counts and 690 posets at equality.
+It also checks the delayed family at eleven lengths from 15 through 45.
+Nagy gives a Lean formalization for the double-factorial family in item~6 \cite{nagy}. Part~II develops other product formulas \cite{bks2}.
+Lean checks the counterexample to every absolute cutoff using actual lists of positions ordered by rank.
+Its theorem \texttt{Packing.Delay.no\_absolute\_wilf\_cutoff} compares the finite packing sets by bijection.
+Lean also checks gluing, recovery from local orders, rank transfer, and the component argument.
+The complete power-class classification and the exact counts after first disagreement have written proofs.
+\paragraph{Declarations.}
+Esa-Pekka P\"alvim\"aki directed the investigation.
+OpenAI Codex (Astra 6.2) developed the mathematical constructions and proofs.
+It wrote the manuscript, the Lean formalization, and the computational checks.
+The author checked the proofs with help from Google Gemini Neon.
+The author assumes responsibility for all content.
+
+\small
+\begin{thebibliography}{9}
+\setlength{\itemsep}{1pt}
+\raggedright
+\bibitem{bks} N. Blitvi\'c, M. S. Kammoun, and E. Steingr\'imsson.
+\emph{Permutations, Pattern Covers, Posets and Positivity: Part I: Patterns and Posets}.
+\href{https://arxiv.org/abs/2610.29846}{arXiv:2610.29846}, 2026.
+\bibitem{bp} J. Borga and R. Penagui\~ao.
+\emph{The feasible region for consecutive patterns of permutations is a cycle polytope}.
+\href{https://arxiv.org/abs/2003.12661}{arXiv:2003.12661}, 2020.
+\bibitem{bks2} N. Blitvi\'c, M. S. Kammoun, and E. Steingr\'imsson.
+\emph{Permutations, Pattern Covers, Posets and Positivity, Part II: Regular Pattern Packings and Moment Sequences}.
+\href{https://arxiv.org/abs/2611.12829}{arXiv:2611.12829}, 2026.
+\bibitem{nagy} Z. Nagy.
+\emph{A uniform double-factorial construction for consecutive-pattern packings}.
+\href{https://arxiv.org/abs/2611.06937}{arXiv:2611.06937}, 2026.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,5 @@
+__pycache__/
+lean/.lake/
+paper.aux
+paper.log
+paper.out

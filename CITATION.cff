@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the preprint when you use these results or their Lean proofs."
+title: "Power sequences and delayed disagreement in consecutive permutation packings"
+type: software
+authors:
+  - family-names: "Pälvimäki"
+    given-names: "Esa-Pekka"
+version: "1.0.0"
+date-released: 2026-11-27
+repository-code: "https://github.com/palvimaki/permutation-power-classes"
+preferred-citation:
+  type: unpublished
+  authors:
+    - family-names: "Pälvimäki"
+      given-names: "Esa-Pekka"
+  title: "Power sequences and delayed disagreement in consecutive permutation packings"
+  year: 2026
+  url: "https://github.com/palvimaki/permutation-power-classes/releases/tag/v1.0.0"

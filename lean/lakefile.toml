@@ -1,0 +1,6 @@
+name = "power-classes"
+version = "0.1.0"
+defaultTargets = ["PowerClasses"]
+
+[[lean_lib]]
+name = "PowerClasses"
