@@ -1,0 +1,6 @@
+{"K":9,"admissible":622416,"signatures":3574,"finite":36884,"finite_signatures":676,"nonzero_minor_pairs":0,"spans":{"0":28016,"1":8388,"2":480}}
+{"K":10,"m":4,"pattern":[4,6,8,10,2,9,1,3,5,7],"span":3,"weight":48,"N3_N4_N5":[116,1832,28964]}
+{"K":10,"m":6,"pattern":[6,9,3,10,4,7,1,8,2,5],"span":3,"weight":4,"N3_N4_N5":[20,116,676]}
+{"K":10,"m":4,"pattern":[1,3,5,7,2,9,4,6,8,10],"span":3,"weight":48,"N3_N4_N5":[116,1832,28964]}
+{"K":10,"m":6,"pattern":[2,5,1,8,4,7,3,10,6,9],"span":3,"weight":4,"N3_N4_N5":[20,116,676]}
+{"K":10,"admissible":6232666,"signatures":9834,"finite":286762,"finite_signatures":1668,"nonzero_minor_pairs":104,"spans":{"0":201662,"1":78552,"2":6444,"3":104}}

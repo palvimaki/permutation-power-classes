@@ -1,0 +1,5 @@
+{"K": 2, "pairs": 2, "finite": 2, "infinite": 0, "counts": 8}
+{"K": 3, "pairs": 8, "finite": 4, "infinite": 4, "counts": 32}
+{"K": 4, "pairs": 38, "finite": 14, "infinite": 24, "counts": 152}
+{"K": 5, "pairs": 196, "finite": 44, "infinite": 152, "counts": 784}
+{"K": 6, "pairs": 1218, "finite": 194, "infinite": 1024, "counts": 4872}

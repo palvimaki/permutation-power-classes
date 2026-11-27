@@ -3,7 +3,8 @@
 Read the [paper](paper.pdf) or its [LaTeX source](paper.tex).
 The paper answers the first part of Question 8 and proves the observation in item 9. [Part I, Section 7](https://arxiv.org/html/2610.29846v1#S7)
 
-The [span research programme](research/span/README.md) contains the new results and their verification status.
+The [research release](research/frontier/README.md) gives a sharp infinite-span cutoff and a proof of Lee and Sah’s limit-shape conjecture.
+The [span programme](research/span/README.md) gives the earlier Lean theorem.
 
 ## Results
 

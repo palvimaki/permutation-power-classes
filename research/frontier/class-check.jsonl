@@ -1,0 +1,6 @@
+{"K": 2, "pairs": 2}
+{"K": 3, "pairs": 8}
+{"K": 4, "pairs": 38, "catalan": 4}
+{"K": 5, "pairs": 196, "ternary": 8, "catalan": 4}
+{"K": 6, "pairs": 1218, "ternary": 24, "catalan": 28}
+{"K": 7, "pairs": 8572, "ternary": 72, "catalan": 52, "same_rate_other": 8}
