@@ -5,15 +5,37 @@ For an admissible overlap of size $m$, every finite span is at most $m$.
 An executable rank test decides whether the span is infinite.
 It also determines which positive distances occur.
 
-| Claim | Evidence |
-|---|---|
-| Infinite-span classifier and bound for actual pattern permutations | [Lean proof](lean/Span.lean), [axiom audit](lean/audit.txt) |
-| Endpoint comparisons for every admissible pair through length nine | [Two independent algorithms](census-method.md), [results by length](census.csv) |
-| Original power-class characterization | Written proof and Lean lemmas in the [base paper](../../paper.tex) |
+## Results and evidence
 
-The census tested 701,540 admissible pairs. Both algorithms agreed on all 129,466,252 endpoint comparisons.
+| Claim | Status | Evidence |
+|---|---|---|
+| A. An executable test decides infinite span. Every finite span is at most the overlap. | Lean end to end | [Permutation statements](lean/Span.lean) · [Axiom audit](lean/audit.txt) |
+| B. Every finite-span pair has a rational ordinary generating function in the copy count. | Written proof | [Transfer matrix and bijection](RESULTS.md#3-finite-span-gives-a-finite-matrix-b) |
+| C. Infinite span forces growth faster than every exponential. | False, by written proof | [Catalan counterexample](RESULTS.md#5-a-catalan-counterexample-to-the-growth-claim-c) |
+| D. An explicit cutoff decides equivalence for two finite-span pairs. | Written proof | [Uniform bound](RESULTS.md#4-an-explicit-cutoff-for-two-finite-span-pairs-d) |
+| A two-window test distinguishes exponential upper bounds from factorial lower bounds. | Written proof after registration | [Growth criterion](RESULTS.md#6-a-replacement-growth-dichotomy) |
+| Span census through pattern length nine | Computed | [Independent algorithms](census-method.md) · [Totals](census.csv) |
+| All finite-span matrices and sequences through length eight | Computed, with recurrence certificates | [Methods and example](matrix-method.md) · [Data](matrix-data.jsonl) · [Independent counts](matrix-replay.jsonl) |
+| Largest first disagreement through length five, including infinite span | Written proof and computation | [Witnesses and equality proofs](delay_small.md) |
+| Original power-class characterization | Written proof and Lean lemmas | [Base paper](../../paper.tex) |
+
+The census tested 701,540 admissible pairs. The two algorithms agreed on all 129,466,252 endpoint comparisons.
 The resulting classification has 43,576 finite-span pairs and 657,964 infinite-span pairs.
-The theorem supplies the inference about arbitrarily many copies.
+The Lean theorem justifies the result for arbitrarily many copies.
+
+The matrix census covered all 6,692 finite-span pairs through length eight.
+Independent counters checked every matrix entry and 33,628 individual packing counts.
+These pairs give exactly six sequences. Three copies suffice to distinguish all six.
+
+For unrestricted pairs, the largest first disagreement is three through length five.
+The unrestricted table through length ten remains incomplete.
+The explicit cutoff in D applies when both spans are finite.
+An effective cutoff for all pairs of bounded length remains open.
+
+The physical-position proof of A bypasses the unfinished Lean proof of the original power-class characterization.
+Stage 2 contains A. Stage 3 adds B, C, D, the growth criterion, and the matrix census.
+The [research note](RESULTS.md) gives the proofs and credits prior results.
+No independent expert has reviewed the new proofs.
 
 ## Reproduce the formal verification
 

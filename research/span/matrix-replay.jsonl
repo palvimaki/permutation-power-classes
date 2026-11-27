@@ -1,0 +1,7 @@
+{"K": 2, "finite_pairs_replayed": 2, "literal_counts_compared": 10, "matrix_entries_checked": 2}
+{"K": 3, "finite_pairs_replayed": 4, "literal_counts_compared": 20, "matrix_entries_checked": 4}
+{"K": 4, "finite_pairs_replayed": 14, "literal_counts_compared": 70, "matrix_entries_checked": 8}
+{"K": 5, "finite_pairs_replayed": 44, "literal_counts_compared": 220, "matrix_entries_checked": 24}
+{"K": 6, "finite_pairs_replayed": 194, "literal_counts_compared": 970, "matrix_entries_checked": 38}
+{"K": 7, "finite_pairs_replayed": 928, "literal_counts_compared": 4640, "matrix_entries_checked": 130}
+{"K": 8, "finite_pairs_replayed": 5506, "literal_counts_compared": 27698, "matrix_entries_checked": 278}

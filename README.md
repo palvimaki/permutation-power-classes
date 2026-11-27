@@ -1,7 +1,7 @@
 # Power sequences and delayed disagreement in consecutive permutation packings
 
 Read the [paper](paper.pdf) or its [LaTeX source](paper.tex).
-The paper addresses two questions from Blitvić, Kammoun, and Steingrímsson. [Part I, Section 7](https://arxiv.org/html/2610.29846v1#S7)
+The paper answers the first part of Question 8 and proves the observation in item 9. [Part I, Section 7](https://arxiv.org/html/2610.29846v1#S7)
 
 The [span research programme](research/span/README.md) contains the new results and their verification status.
 
@@ -16,7 +16,9 @@ The [span research programme](research/span/README.md) contains the new results 
 - **Item 8.** Two patterns of equal length and overlap can first differ at any prescribed copy count of at least four.
   The example with length 21 and overlap 18 first differs from the increasing pattern at six copies.
   The paper also gives this delay against each fixed positive power sequence.
-  A useful general upper bound for two arbitrary patterns of bounded length remains open.
+  An independent family appeared on 26 November 2026. [Earlier construction by 1337isnot1337](https://github.com/1337isnot1337/solved-conjectures/blob/3f84597110cb5fa3dcfa6135bf0ee82120a3d431/results/blitvic-kammoun-steingrimsson-packing-cutoff/PROOF.md)
+  The span programme gives an explicit upper bound for two finite-span pairs.
+  An effective general bound for arbitrary pairs remains open.
 - **Chains.** The base-one test includes overlaps larger than half the pattern length.
   Theorem 5.23 of Part I treats overlaps up to half the length.
 

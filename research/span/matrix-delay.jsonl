@@ -1,0 +1,7 @@
+{"max_K": 2, "cutoff_used": 2, "wilf_classes": 1, "max_first_disagreement": null, "witness_patterns_and_overlaps": []}
+{"max_K": 3, "cutoff_used": 2, "wilf_classes": 1, "max_first_disagreement": null, "witness_patterns_and_overlaps": []}
+{"max_K": 4, "cutoff_used": 2, "wilf_classes": 1, "max_first_disagreement": null, "witness_patterns_and_overlaps": []}
+{"max_K": 5, "cutoff_used": 2, "wilf_classes": 1, "max_first_disagreement": null, "witness_patterns_and_overlaps": []}
+{"max_K": 6, "cutoff_used": 2, "wilf_classes": 2, "max_first_disagreement": 2, "witness_patterns_and_overlaps": [[[1, 2], 1], [[1, 3, 2, 5, 4, 6], 2]]}
+{"max_K": 7, "cutoff_used": 2, "wilf_classes": 3, "max_first_disagreement": 2, "witness_patterns_and_overlaps": [[[1, 2], 1], [[1, 3, 2, 5, 4, 6], 2]]}
+{"max_K": 8, "cutoff_used": 3, "wilf_classes": 6, "max_first_disagreement": 3, "witness_patterns_and_overlaps": [[[1, 3, 2, 5, 6, 7, 4, 8], 2], [[1, 3, 5, 2, 7, 4, 6, 8], 3]]}
