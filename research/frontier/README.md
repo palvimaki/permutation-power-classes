@@ -28,7 +28,7 @@ All shared ranks concentrate simultaneously. For each fixed tolerance, the error
 | Lee–Sah Conjecture 6.1 | Written proof | [PDF](limit-shape.pdf) · [Density comparison check](LIMIT-WEIGHT-AUDIT.md) · [Statement check and permutation plot](LIMIT-AUDIT.md) |
 
 The new theorems have written proofs. They await external mathematical review and Lean verification.
-Astra 6.2 produced this work. I selected the problems and released this work on my GitHub repository. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
+Astra 6.2 produced this work. I selected the packing problems and released this work on my GitHub repository. Astra chose the Lee–Sah problem during the investigation. I wrote none of the proofs. [Contact me for corrections.](https://github.com/palvimaki/permutation-power-classes/issues)
 Gemini Neon checked the proofs in the original power-class paper.
 Fable checked the earlier span result and proposed the eventual geometric test.
 The [registration](PROTOCOL.md) predates the new census.
